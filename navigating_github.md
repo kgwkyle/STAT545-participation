@@ -3,7 +3,7 @@
 
 Here is the URL to the __STAT 545__ homepage repo:
 
-[STAT 545 Home](https://github.com/STAT545-UBC/STAT-545-home)
+[STAT 545 Home](https://github.com/STAT545-UBC/STAT545-home)
 
 Here is its corresponding _Organization_ account:
 
