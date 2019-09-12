@@ -1,1 +1,1 @@
-# STAT 545A participation 
+# STAT 545A participation
