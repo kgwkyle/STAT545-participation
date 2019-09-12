@@ -1,0 +1,20 @@
+[?25l[0mMicrosoft Windows [Version 10.0.17763.737][0K
+(c) 2018 Microsoft Corporation. All rights reserved.[0K
+[0K
+C:\Users\kylew\OneDrive\Documents\Graduate School\UBC\STAT 545\STAT545-particip[0Ka
+tion>[0K[0m[1;1H[2J[0m[0K[?25l
+C:\Users\kylew\OneDrive\Documents\Graduate School\UBC\STAT 545\STAT545-participation>[0K[?25h[?25l
+C:\Users\kylew\OneDrive\Documents\Graduate School\UBC\STAT 545\STAT545-participation>[0K[?25h^V[0K[?25lC:\Users\kylew\OneDrive\Documents\Graduate School\UBC\STAT 545\STAT545-participation>[0K[?25h]0;  - git  fetch origingit fetch origin[0K[?25l
+[0K[?25hremote: Enumerating objects: 6, done.[0K[?25l
+remote: Counting objects: 100% (6/6), done.[0K
+remote: Compressing objects: 100% (3/3)[0K[1G[?25hremote: Compressing objects: 100% (3/3), done.[0K[?25l
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0[0K
+[0K[?25h[?25lUnpacking objects:  75% (3/4)[0K[1G[?25hUnpacking objects: 100% (4/4), done.[0K[?25l
+[0K[?25hFrom https://github.com/kgwkyle/STAT545-participation[0K[?25l
+   24d55ed..6826f00  master     -> origin/master[0K
+ * [new tag]         cm004      -> cm004[0K
+[0K[?25h]0; [?25l
+C:\Users\kylew\OneDrive\Documents\Graduate School\UBC\STAT 545\STAT545-participation>git reset --hard origin/master[0K[?25h]0;  - git  reset --hard origin/master[?25l
+[0K[?25h]0; HEAD is now at 6826f00 Update README.md[0K[?25l
+[0K
+C:\Users\kylew\OneDrive\Documents\Graduate School\UBC\STAT 545\STAT545-participation>[0K[?25h
