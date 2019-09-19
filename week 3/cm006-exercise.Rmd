@@ -129,21 +129,24 @@ Return to guide at section 6.7.
 
 ```{r}
 gapminder %>%
-  filter(FILL_THIS_IN)
+  filter(pop > 100000000)
 ```
 
 2. Your turn: of those rows filtered from step 1., only take data from Asia.
 
 ```{r}
 gapminder %>%
-  filter(FILL_THIS_IN)
+  filter(pop > 100000000) %>%
+  filter(continent == "Asia")
+  
 ```
 
 3. Repeat 2, but take data from countries Brazil, and China. 
 
 ```{r}
 gapminder %>%
-  filter(FILL_THIS_IN)
+  filter(pop > 100000000,
+         country == 'Brazil' | country == 'China')
 ```
 
 ## `mutate()` (10 min)
@@ -155,7 +158,7 @@ Let's get:
 
 ```{r}
 gapminder %>%
-  mutate(FILL_THIS_IN)
+  mutate(gdpBill = gdpPercap*pop/1000000000)
 ```
 
 Notice the backwards compatibility! No need for loops!
@@ -164,7 +167,7 @@ Try the same thing, but with `transmute` (drops all other variables).
 
 ```{r}
 gapminder %>%
-  transmute(FILL_THIS_IN)
+  transmute(gdpBill = round(gdpPercap*pop/1000000000, 2))
 ```
 
 The `if_else` function is useful for changing certain elements in a data frame.
@@ -173,12 +176,14 @@ Example: Suppose Canada's 1952 life expectancy was mistakenly entered as 68.8 in
 
 ```{r}
 gapminder %>%
-  mutate(FILL_THIS_IN)
+  mutate(lifeExp = if_else(country == "Canada" & year == 1952, 70, lifeExp))
 ```
 
 Your turn: Make a new column called `cc` that pastes the country name followed by the continent, separated by a comma. (Hint: use the `paste` function with the `sep=", "` argument).
 
 ```{r}
+gapminder %>%
+  mutate(cc = paste(country, continent, sep = ","))
 ```
 
 These functions we've seen are called __vectorized functions__.
