@@ -38,7 +38,8 @@ arrange(min_life)
 gapminder %>%
   group_by(country) %>%
   arrange(year) %>%
-  mutate(rel_growth = pop - first(pop))
+  mutate(rel_growth = pop - first(pop)) %>%
+  DT::datatable()
 ```
 
 
@@ -55,7 +56,8 @@ gapminder %>%
   ungroup() %>% 
   group_by(continent) %>%
   filter(inc_life_exp == min(inc_life_exp)) %>% 
-  arrange(inc_life_exp)
+  arrange(inc_life_exp) %>%
+  DT::datatable()
 ```
 
 
