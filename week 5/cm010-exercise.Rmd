@@ -96,7 +96,7 @@ retk <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/dat
 1. Combine these into a single tibble.
 
 ```{r}
-FILL_THIS_IN(fell, FILL_THIS_IN)
+bind_rows(fell, ttow, retk)
 ```
 
 2. Which races are present in "The Fellowship of the Ring" (`fell`), but not in any of the other ones?
@@ -104,7 +104,7 @@ FILL_THIS_IN(fell, FILL_THIS_IN)
 ```{r}
 fell %>% 
   anti_join(ttow, by = "Race") %>% 
-  FILL_THIS_IN(FILL_THIS_IN, by = "Race")
+  anti_join(retk, by = "Race")
 ```
 
 
@@ -124,13 +124,14 @@ Let's use three set functions: `intersect`, `union` and `setdiff`. We'll work wi
 1. Rows that appear in both `y` and `z`
 
 ```{r}
-FILL_THIS_IN(y, z)
+intersect(y, z)
+inner_join(y, z)
 ```
 
 2. You collected the data in `y` on Day 1, and `z` in Day 2. Make a data set to reflect that.
 
 ```{r}
-FILL_THIS_IN(
+bind_rows(
   mutate(y, day = "Day 1"),
   mutate(z, day = "Day 2")
 )
@@ -139,5 +140,6 @@ FILL_THIS_IN(
 3. The rows contained in `z` are bad! Remove those rows from `y`.
 
 ```{r}
-FILL_THIS_IN(FILL_THIS_IN, FILL_THIS_IN)
+setdiff(z, y)
+anti_join(z, y)
 ```
