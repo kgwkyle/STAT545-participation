@@ -4,7 +4,7 @@ This is the participation repository for STAT 545A.
 
 The repository will be organized by week using __folders__. 
 
-Note that weeks 1 and 2 were merged into one folder, titled _weeks 1 and 2_.
+Note that weeks 1 and 2 were merged into one folder, titled _weeks-1-and-2_.
 
 HTML links for each class where an HTML file was created and stored in this repository can be found below:
 * [Navigating Github](https://kgwkyle.github.io/STAT545-participation/weeks-1-and-2/navigating_github.html)
