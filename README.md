@@ -13,3 +13,5 @@ HTML links for each class where an HTML file was created and stored in this repo
 * [Class Meeting 6](https://kgwkyle.github.io/STAT545-participation/week-3/cm006-exercise.html)
 * [Class Meeting 7](https://kgwkyle.github.io/STAT545-participation/week-4/cm007-exercise.html)
 * [Class Meeting 9](https://kgwkyle.github.io/STAT545-participation/week-5/cm009-exercise.nb.html)
+
+__Note that all the exercises found in this repository were adapted from [Dr. Vincenzo Coia](https://stat545.stat.ubc.ca/authors/vincenzo/) and [Dr. Firas Moosvi](https://stat545.stat.ubc.ca/authors/firas/)
