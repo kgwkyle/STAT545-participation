@@ -10,6 +10,9 @@ output:
 editor_options: 
   chunk_output_type: inline
 ---
+# Preliminary
+
+Load the following datasets that will be used for this class:
 
 ```{r, warning = FALSE, message = FALSE}
 library("tidyverse")

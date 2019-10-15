@@ -11,15 +11,7 @@ output:
 
 ## Preliminary
 
-Begin by loading the required packages. If you don't have these installed (or don't know whether you have them installed), you can install them by executing the following code in your console:
-
-```
-install.packages("tidyverse")
-install.packages("scales")
-install.packages("tsibble")
-```
-
-Now run this code chunk to load the packages:
+Begin by loading the required packages:
 
 ```{r load packages, warning = FALSE}
 suppressPackageStartupMessages(library(tidyverse))
