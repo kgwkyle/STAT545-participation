@@ -1,6 +1,6 @@
 # STAT 545A participation
 
-This is the participation repository for STAT 545A.
+This is the participation repository for STAT 545A for _Kyle Wlodarczyk_.
 
 The repository will be organized by week using __folders__. 
 
