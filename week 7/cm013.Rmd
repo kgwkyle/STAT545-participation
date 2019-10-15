@@ -73,17 +73,21 @@ Great resource for selecting the right plot: https://www.data-to-viz.com/ ; enco
 
 ### Case Study 1: Context matters
 
+The graph uses two y-axes, one shows practically no change while the other is showing a drastic change amongst the data
+
 ### Case Study 2: A case for pie charts
+
+People don't like them in university for some reason
 
 ## Part 3: Principles of effective visualizations [20 mins]
 
 We will be filling these principles in together as a class
 
 1. 
-1. 
-1. 
-1. 
-1. 
+2. 
+3. 
+4. 
+5. 
 
 ### Make a great plot worse
 
@@ -96,6 +100,33 @@ How many of the principles did you manage to break?
 Did you know that you can make interactive graphs and plots in R using the plotly library? We will show you a demo of what plotly is and why it's useful, and then you can try converting a static ggplot graph into an interactive plotly graph.
 
 This is a preview of what we'll be doing in STAT 547 - making dynamic and interactive dashboards using R!
+
+```{r}
+library(tidyverse)
+library(gapminder)
+library(plotly)
+```
+
+```{r}
+p <- ggplot(gapminder, aes(x = gdpPercap, y = lifeExp,
+            color = continent)) +
+  geom_point()
+
+# make interactive!
+
+p %>%
+  ggplotly()
+
+# plot_ly syntax
+gapminder %>%
+  plot_ly(x = ~gdpPercap,
+          y = ~lifeExp,
+          color = ~continent,
+          
+          type = "scatter",
+          mode = "markers")
+```
+
 
 ## Supplemental worksheet (Optional)
 
