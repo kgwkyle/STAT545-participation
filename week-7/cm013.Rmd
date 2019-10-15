@@ -1,0 +1,135 @@
+# Effective Visualizations
+
+Now that you know how to create graphics and visualizations in R, you are armed with powerful tools for scientific computing and analysis. With this power also comes great responsibility. Effective visualizations is an incredibly important aspect of scientific research and communication. There have been several books (see references) written about these principles. In class today we will be going through several case-studies trying to develop some expertise into making effective visualizations. 
+
+## Worksheet
+
+**The worksheet questions for today are embedded into the class notes.**
+
+You can download this Rmd file [here](https://github.com/STAT545-UBC/Classroom/blob/master/cm013.Rmd)
+
+Note, there will be very little coding in-class today, but I've given you plenty of exercises in the form of a supplemental worksheet (linked at the bottom of this page) to practice with after class is over.
+
+## Resources
+
+1. [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/introduction.html) by Claus Wilke.
+
+1. [Visualization Analysis and Design](https://www-taylorfrancis-com.ezproxy.library.ubc.ca/books/9780429088902) by Tamara Munzner.
+
+1. [STAT545.com - Effective Graphics](https://stat545.com/effective-graphs.html) by Jenny Bryan.
+
+1. [ggplot2 book](https://ggplot2-book.org) by Hadley Wickam.
+
+1. [Callingbull.org](https://callingbull.org/tools.html) by Carl T. Bergstrom and Jevin West.
+
+## Part 1: Warm-up and pre-test [20 mins]
+
+### Warmup:
+
+Write some notes here about what "effective visualizations" means to you. Think of elements of good graphics and plots that you have seen - what makes them good or bad? Write 3-5 points.
+
+1. Colour/contrast
+2. Labels
+3. Title
+4. Good figure description
+5. Legible (font size readable)
+
+### CQ01: Weekly hours for full-time employees
+
+> Question: Evaluate the strength of the claim based on the data: "German workers are more motivated and work more hours than workers in other EU nations."
+>
+> Very strong, strong, weak, very week, do not know
+- Weak -> The Germans are only working <1 extra hour than the next 6 countries; the term "motivated" is also no way justified; x-axis exaggerated; no standard error, n-value, standard deviation
+
+- Main takeaway: Summarize the main takeaway from this question/discussion here
+
+  Don't need both gridlines and number labels; one or the other, as gridlines can distract from the actual value. X-axis should start at 0 here.
+
+### CQ02: Average Global Temperature by year
+
+> Question: For the years this temperature data is displayed, is there an appreciable increase in temperature?
+> 
+> Yes, No, Do not know
+- Yes; the y-axis goes to 0 even though this is temperature and the 0 is a meaningful 0, so there is no point in having the axis go to 0. The increase is slight and hard to see, but the trend is made visible by the gridlines in the background
+
+- Main takeaway: Summarize the main takeaway from this question/discussion here
+
+  Can't blindly just follow the same rules for all graphs; need to use appropriate scale on axis (example: Temperature, why start at 0? 0 is just a different value here)
+
+### CQ03: Gun deaths in Florida
+
+> Question: Evaluate the strength of the claim based on the data: “Soon after this legislation was passed, gun deaths sharply declined."
+>
+> Very strong, strong, weak, very week, do not know
+- very weak; he y-axis is reversed from expected! 
+
+- Main takeaway: Summarize the main takeaway from this question/discussion here
+
+  Colour matters! Don't try to be too fancy because you might end up being misleading  by accident
+
+## Part 2: Extracting insight from visualizations  [20 mins]
+
+Great resource for selecting the right plot: https://www.data-to-viz.com/ ; encourage you all to consult it when choosing to visualize data.
+
+### Case Study 1: Context matters
+
+The graph uses two y-axes, one shows practically no change while the other is showing a drastic change amongst the data
+
+### Case Study 2: A case for pie charts
+
+People don't like them in university for some reason
+
+## Part 3: Principles of effective visualizations [20 mins]
+
+We will be filling these principles in together as a class
+
+1. 
+2. 
+3. 
+4. 
+5. 
+
+### Make a great plot worse
+
+Instructions: Here is a code chunk that shows an effective visualization. First, copy this code chunk into a new cell. Then, modify it to purposely make this chart "bad" by breaking the principles of effective visualization above. Your final chart still needs to run/compile and it should still produce a plot. 
+
+How many of the principles did you manage to break?
+
+## Plotly demo [10 mins]
+
+Did you know that you can make interactive graphs and plots in R using the plotly library? We will show you a demo of what plotly is and why it's useful, and then you can try converting a static ggplot graph into an interactive plotly graph.
+
+This is a preview of what we'll be doing in STAT 547 - making dynamic and interactive dashboards using R!
+
+```{r}
+library(tidyverse)
+library(gapminder)
+library(plotly)
+```
+
+```{r}
+p <- ggplot(gapminder, aes(x = gdpPercap, y = lifeExp,
+            color = continent)) +
+  geom_point()
+
+# make interactive!
+
+p %>%
+  ggplotly()
+
+# plot_ly syntax
+gapminder %>%
+  plot_ly(x = ~gdpPercap,
+          y = ~lifeExp,
+          color = ~continent,
+          
+          type = "scatter",
+          mode = "markers")
+```
+
+
+## Supplemental worksheet (Optional)
+
+You are highly encouraged to the cm013 supplemental exercises worksheet. It is a great guide that will take you through Scales, Colours, and Themes in ggplot. There is also a short guided activity showing you how to make a ggplot interactive using plotly.
+
+- [Supplemental Rmd file here](https://github.com/STAT545-UBC/Classroom/blob/master/tutorials/cm013-supplemental.Rmd)
