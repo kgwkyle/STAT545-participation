@@ -1,9 +1,12 @@
 ---
 title: "cm012 Exercises: Factors"
+date: "October 10, 2019"
 output: 
   html_document:
     keep_md: true
-    theme: paper
+    df_print: paged
+    toc: yes
+    theme: cerulean
 ---
 
 ```{r allow errors, warning = FALSE, message = FALSE, echo = FALSE}

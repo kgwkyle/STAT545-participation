@@ -1,21 +1,17 @@
 ---
 title: "cm008 Exercises: Fix the Plots"
+date: "September 26, 2019"
 output: 
   html_document:
     keep_md: true
-    theme: paper
+    df_print: paged
+    toc: yes
+    theme: cerulean
 ---
 
 In this worksheet, we'll be looking at some erroneous plots and fixing them. 
 
-I think you might not have these two packages installed:
-
-```
-install.packages("ggridges")
-install.packages("scales")
-```
-
-```{r, message = FALSE, warning = FALSE}
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(gapminder)
 library(ggridges)

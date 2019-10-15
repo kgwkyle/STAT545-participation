@@ -1,9 +1,12 @@
 ---
 title: "cm010 Exercises: Tibble Joins"
+date: "October 3, 2019"
 output: 
   html_document:
     keep_md: true
-    theme: paper
+    df_print: paged
+    toc: yes
+    theme: cerulean
 ---
 
 ## Requirements
@@ -33,22 +36,11 @@ The package `singer` comes with two smallish data frames about songs. Let's take
    rename(song = title))
 ```
 
-```
-## # A tibble: 22 x 3
-##    song                             artist_name      year
-##    <chr>                            <chr>           <int>
-##  1 Corduroy                         Pearl Jam        1994
-##  2 Grievance                        Pearl Jam        2000
-##  3 Stupidmop                        Pearl Jam        1994
-##  4 Present Tense                    Pearl Jam        1996
-##  5 MFC                              Pearl Jam        1998
-##  6 Lukin                            Pearl Jam        1996
-##  7 It's Lulu                        The Boo Radleys  1995
-##  8 Sparrow                          The Boo Radleys  1992
-##  9 Martin_ Doom! It's Seven O'Clock The Boo Radleys  1995
-## 10 Leaves And Sand                  The Boo Radleys  1993
-## # ... with 12 more rows
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Corduroy","2":"Pearl Jam","3":"1994"},{"1":"Grievance","2":"Pearl Jam","3":"2000"},{"1":"Stupidmop","2":"Pearl Jam","3":"1994"},{"1":"Present Tense","2":"Pearl Jam","3":"1996"},{"1":"MFC","2":"Pearl Jam","3":"1998"},{"1":"Lukin","2":"Pearl Jam","3":"1996"},{"1":"It's Lulu","2":"The Boo Radleys","3":"1995"},{"1":"Sparrow","2":"The Boo Radleys","3":"1992"},{"1":"Martin_ Doom! It's Seven O'Clock","2":"The Boo Radleys","3":"1995"},{"1":"Leaves And Sand","2":"The Boo Radleys","3":"1993"},{"1":"High as Monkeys","2":"The Boo Radleys","3":"1998"},{"1":"Comb Your Hair","2":"The Boo Radleys","3":"1998"},{"1":"Butterfly McQueen","2":"The Boo Radleys","3":"1993"},{"1":"Mine Again","2":"Mariah Carey","3":"2005"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005"},{"1":"Babydoll","2":"Mariah Carey","3":"1997"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005"},{"1":"Vision Of Love","2":"Mariah Carey","3":"1990"},{"1":"My One and Only Love","2":"Carly Simon","3":"2005"},{"1":"It Was So Easy  (LP Version)","2":"Carly Simon","3":"1972"},{"1":"I've Got A Crush On You","2":"Carly Simon","3":"1994"},{"1":"Manha De Carnaval (Theme from \"Black Orpheus\")","2":"Carly Simon","3":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 ```r
@@ -58,25 +50,11 @@ The package `singer` comes with two smallish data frames about songs. Let's take
           song  = title))
 ```
 
-```
-## # A tibble: 14 x 4
-##    song                        artist_name   city        album             
-##    <chr>                       <chr>         <chr>       <chr>             
-##  1 Grievance                   Pearl Jam     Seattle, WA Binaural          
-##  2 Stupidmop                   Pearl Jam     Seattle, WA Vitalogy          
-##  3 Present Tense               Pearl Jam     Seattle, WA No Code           
-##  4 MFC                         Pearl Jam     Seattle, WA Live On Two Legs  
-##  5 Lukin                       Pearl Jam     Seattle, WA Seattle Washingto~
-##  6 Stuck On Amber              The Boo Radl~ Liverpool,~ Wake Up!          
-##  7 It's Lulu                   The Boo Radl~ Liverpool,~ Best Of           
-##  8 Sparrow                     The Boo Radl~ Liverpool,~ Everything's Alri~
-##  9 High as Monkeys             The Boo Radl~ Liverpool,~ Kingsize          
-## 10 Butterfly McQueen           The Boo Radl~ Liverpool,~ Giant Steps       
-## 11 My One and Only Love        Carly Simon   New York, ~ Moonlight Serenade
-## 12 It Was So Easy  (LP Versio~ Carly Simon   New York, ~ No Secrets        
-## 13 I've Got A Crush On You     Carly Simon   New York, ~ Clouds In My Coff~
-## 14 "Manha De Carnaval (Theme ~ Carly Simon   New York, ~ Into White
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["city"],"name":[3],"type":["chr"],"align":["left"]},{"label":["album"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"Grievance","2":"Pearl Jam","3":"Seattle, WA","4":"Binaural"},{"1":"Stupidmop","2":"Pearl Jam","3":"Seattle, WA","4":"Vitalogy"},{"1":"Present Tense","2":"Pearl Jam","3":"Seattle, WA","4":"No Code"},{"1":"MFC","2":"Pearl Jam","3":"Seattle, WA","4":"Live On Two Legs"},{"1":"Lukin","2":"Pearl Jam","3":"Seattle, WA","4":"Seattle Washington November 5 2000"},{"1":"Stuck On Amber","2":"The Boo Radleys","3":"Liverpool, England","4":"Wake Up!"},{"1":"It's Lulu","2":"The Boo Radleys","3":"Liverpool, England","4":"Best Of"},{"1":"Sparrow","2":"The Boo Radleys","3":"Liverpool, England","4":"Everything's Alright Forever"},{"1":"High as Monkeys","2":"The Boo Radleys","3":"Liverpool, England","4":"Kingsize"},{"1":"Butterfly McQueen","2":"The Boo Radleys","3":"Liverpool, England","4":"Giant Steps"},{"1":"My One and Only Love","2":"Carly Simon","3":"New York, NY","4":"Moonlight Serenade"},{"1":"It Was So Easy  (LP Version)","2":"Carly Simon","3":"New York, NY","4":"No Secrets"},{"1":"I've Got A Crush On You","2":"Carly Simon","3":"New York, NY","4":"Clouds In My Coffee 1965-1995"},{"1":"Manha De Carnaval (Theme from \"Black Orpheus\")","2":"Carly Simon","3":"New York, NY","4":"Into White"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 1. We really care about the songs in `time`. But, which of those songs do we know its corresponding album?
@@ -87,48 +65,22 @@ time %>%
   semi_join(album, by = c("song", "artist_name"))
 ```
 
-```
-## # A tibble: 13 x 3
-##    song                                               artist_name      year
-##    <chr>                                              <chr>           <int>
-##  1 Grievance                                          Pearl Jam        2000
-##  2 Stupidmop                                          Pearl Jam        1994
-##  3 Present Tense                                      Pearl Jam        1996
-##  4 MFC                                                Pearl Jam        1998
-##  5 Lukin                                              Pearl Jam        1996
-##  6 It's Lulu                                          The Boo Radleys  1995
-##  7 Sparrow                                            The Boo Radleys  1992
-##  8 High as Monkeys                                    The Boo Radleys  1998
-##  9 Butterfly McQueen                                  The Boo Radleys  1993
-## 10 My One and Only Love                               Carly Simon      2005
-## 11 It Was So Easy  (LP Version)                       Carly Simon      1972
-## 12 I've Got A Crush On You                            Carly Simon      1994
-## 13 "Manha De Carnaval (Theme from \"Black Orpheus\")" Carly Simon      2007
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Grievance","2":"Pearl Jam","3":"2000"},{"1":"Stupidmop","2":"Pearl Jam","3":"1994"},{"1":"Present Tense","2":"Pearl Jam","3":"1996"},{"1":"MFC","2":"Pearl Jam","3":"1998"},{"1":"Lukin","2":"Pearl Jam","3":"1996"},{"1":"It's Lulu","2":"The Boo Radleys","3":"1995"},{"1":"Sparrow","2":"The Boo Radleys","3":"1992"},{"1":"High as Monkeys","2":"The Boo Radleys","3":"1998"},{"1":"Butterfly McQueen","2":"The Boo Radleys","3":"1993"},{"1":"My One and Only Love","2":"Carly Simon","3":"2005"},{"1":"It Was So Easy  (LP Version)","2":"Carly Simon","3":"1972"},{"1":"I've Got A Crush On You","2":"Carly Simon","3":"1994"},{"1":"Manha De Carnaval (Theme from \"Black Orpheus\")","2":"Carly Simon","3":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 ```r
 time %>% 
   inner_join(album, by = c("song", "artist_name"))
 ```
 
-```
-## # A tibble: 13 x 5
-##    song                     artist_name    year city       album           
-##    <chr>                    <chr>         <int> <chr>      <chr>           
-##  1 Grievance                Pearl Jam      2000 Seattle, ~ Binaural        
-##  2 Stupidmop                Pearl Jam      1994 Seattle, ~ Vitalogy        
-##  3 Present Tense            Pearl Jam      1996 Seattle, ~ No Code         
-##  4 MFC                      Pearl Jam      1998 Seattle, ~ Live On Two Legs
-##  5 Lukin                    Pearl Jam      1996 Seattle, ~ Seattle Washing~
-##  6 It's Lulu                The Boo Radl~  1995 Liverpool~ Best Of         
-##  7 Sparrow                  The Boo Radl~  1992 Liverpool~ Everything's Al~
-##  8 High as Monkeys          The Boo Radl~  1998 Liverpool~ Kingsize        
-##  9 Butterfly McQueen        The Boo Radl~  1993 Liverpool~ Giant Steps     
-## 10 My One and Only Love     Carly Simon    2005 New York,~ Moonlight Seren~
-## 11 It Was So Easy  (LP Ver~ Carly Simon    1972 New York,~ No Secrets      
-## 12 I've Got A Crush On You  Carly Simon    1994 New York,~ Clouds In My Co~
-## 13 "Manha De Carnaval (The~ Carly Simon    2007 New York,~ Into White
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["city"],"name":[4],"type":["chr"],"align":["left"]},{"label":["album"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Grievance","2":"Pearl Jam","3":"2000","4":"Seattle, WA","5":"Binaural"},{"1":"Stupidmop","2":"Pearl Jam","3":"1994","4":"Seattle, WA","5":"Vitalogy"},{"1":"Present Tense","2":"Pearl Jam","3":"1996","4":"Seattle, WA","5":"No Code"},{"1":"MFC","2":"Pearl Jam","3":"1998","4":"Seattle, WA","5":"Live On Two Legs"},{"1":"Lukin","2":"Pearl Jam","3":"1996","4":"Seattle, WA","5":"Seattle Washington November 5 2000"},{"1":"It's Lulu","2":"The Boo Radleys","3":"1995","4":"Liverpool, England","5":"Best Of"},{"1":"Sparrow","2":"The Boo Radleys","3":"1992","4":"Liverpool, England","5":"Everything's Alright Forever"},{"1":"High as Monkeys","2":"The Boo Radleys","3":"1998","4":"Liverpool, England","5":"Kingsize"},{"1":"Butterfly McQueen","2":"The Boo Radleys","3":"1993","4":"Liverpool, England","5":"Giant Steps"},{"1":"My One and Only Love","2":"Carly Simon","3":"2005","4":"New York, NY","5":"Moonlight Serenade"},{"1":"It Was So Easy  (LP Version)","2":"Carly Simon","3":"1972","4":"New York, NY","5":"No Secrets"},{"1":"I've Got A Crush On You","2":"Carly Simon","3":"1994","4":"New York, NY","5":"Clouds In My Coffee 1965-1995"},{"1":"Manha De Carnaval (Theme from \"Black Orpheus\")","2":"Carly Simon","3":"2007","4":"New York, NY","5":"Into White"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 2. Go ahead and add the corresponding albums to the `time` tibble, being sure to preserve rows even if album info is not readily available.
 
@@ -139,22 +91,11 @@ time %>%
   select(-city)
 ```
 
-```
-## # A tibble: 22 x 4
-##    song                      artist_name     year album                    
-##    <chr>                     <chr>          <int> <chr>                    
-##  1 Corduroy                  Pearl Jam       1994 <NA>                     
-##  2 Grievance                 Pearl Jam       2000 Binaural                 
-##  3 Stupidmop                 Pearl Jam       1994 Vitalogy                 
-##  4 Present Tense             Pearl Jam       1996 No Code                  
-##  5 MFC                       Pearl Jam       1998 Live On Two Legs         
-##  6 Lukin                     Pearl Jam       1996 Seattle Washington Novem~
-##  7 It's Lulu                 The Boo Radle~  1995 Best Of                  
-##  8 Sparrow                   The Boo Radle~  1992 Everything's Alright For~
-##  9 Martin_ Doom! It's Seven~ The Boo Radle~  1995 <NA>                     
-## 10 Leaves And Sand           The Boo Radle~  1993 <NA>                     
-## # ... with 12 more rows
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["album"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"Corduroy","2":"Pearl Jam","3":"1994","4":"NA"},{"1":"Grievance","2":"Pearl Jam","3":"2000","4":"Binaural"},{"1":"Stupidmop","2":"Pearl Jam","3":"1994","4":"Vitalogy"},{"1":"Present Tense","2":"Pearl Jam","3":"1996","4":"No Code"},{"1":"MFC","2":"Pearl Jam","3":"1998","4":"Live On Two Legs"},{"1":"Lukin","2":"Pearl Jam","3":"1996","4":"Seattle Washington November 5 2000"},{"1":"It's Lulu","2":"The Boo Radleys","3":"1995","4":"Best Of"},{"1":"Sparrow","2":"The Boo Radleys","3":"1992","4":"Everything's Alright Forever"},{"1":"Martin_ Doom! It's Seven O'Clock","2":"The Boo Radleys","3":"1995","4":"NA"},{"1":"Leaves And Sand","2":"The Boo Radleys","3":"1993","4":"NA"},{"1":"High as Monkeys","2":"The Boo Radleys","3":"1998","4":"Kingsize"},{"1":"Comb Your Hair","2":"The Boo Radleys","3":"1998","4":"NA"},{"1":"Butterfly McQueen","2":"The Boo Radleys","3":"1993","4":"Giant Steps"},{"1":"Mine Again","2":"Mariah Carey","3":"2005","4":"NA"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005","4":"NA"},{"1":"Babydoll","2":"Mariah Carey","3":"1997","4":"NA"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005","4":"NA"},{"1":"Vision Of Love","2":"Mariah Carey","3":"1990","4":"NA"},{"1":"My One and Only Love","2":"Carly Simon","3":"2005","4":"Moonlight Serenade"},{"1":"It Was So Easy  (LP Version)","2":"Carly Simon","3":"1972","4":"No Secrets"},{"1":"I've Got A Crush On You","2":"Carly Simon","3":"1994","4":"Clouds In My Coffee 1965-1995"},{"1":"Manha De Carnaval (Theme from \"Black Orpheus\")","2":"Carly Simon","3":"2007","4":"Into White"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 3. Which songs do we have "year", but not album info?
 
@@ -164,24 +105,11 @@ time %>%
   semi_join(album, by = "song")
 ```
 
-```
-## # A tibble: 13 x 3
-##    song                                               artist_name      year
-##    <chr>                                              <chr>           <int>
-##  1 Grievance                                          Pearl Jam        2000
-##  2 Stupidmop                                          Pearl Jam        1994
-##  3 Present Tense                                      Pearl Jam        1996
-##  4 MFC                                                Pearl Jam        1998
-##  5 Lukin                                              Pearl Jam        1996
-##  6 It's Lulu                                          The Boo Radleys  1995
-##  7 Sparrow                                            The Boo Radleys  1992
-##  8 High as Monkeys                                    The Boo Radleys  1998
-##  9 Butterfly McQueen                                  The Boo Radleys  1993
-## 10 My One and Only Love                               Carly Simon      2005
-## 11 It Was So Easy  (LP Version)                       Carly Simon      1972
-## 12 I've Got A Crush On You                            Carly Simon      1994
-## 13 "Manha De Carnaval (Theme from \"Black Orpheus\")" Carly Simon      2007
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Grievance","2":"Pearl Jam","3":"2000"},{"1":"Stupidmop","2":"Pearl Jam","3":"1994"},{"1":"Present Tense","2":"Pearl Jam","3":"1996"},{"1":"MFC","2":"Pearl Jam","3":"1998"},{"1":"Lukin","2":"Pearl Jam","3":"1996"},{"1":"It's Lulu","2":"The Boo Radleys","3":"1995"},{"1":"Sparrow","2":"The Boo Radleys","3":"1992"},{"1":"High as Monkeys","2":"The Boo Radleys","3":"1998"},{"1":"Butterfly McQueen","2":"The Boo Radleys","3":"1993"},{"1":"My One and Only Love","2":"Carly Simon","3":"2005"},{"1":"It Was So Easy  (LP Version)","2":"Carly Simon","3":"1972"},{"1":"I've Got A Crush On You","2":"Carly Simon","3":"1994"},{"1":"Manha De Carnaval (Theme from \"Black Orpheus\")","2":"Carly Simon","3":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 4. Which artists are in `time`, but not in `album`?
 
@@ -191,16 +119,11 @@ time %>%
   anti_join(album, by = "artist_name")
 ```
 
-```
-## # A tibble: 5 x 3
-##   song                  artist_name   year
-##   <chr>                 <chr>        <int>
-## 1 Mine Again            Mariah Carey  2005
-## 2 Don't Forget About Us Mariah Carey  2005
-## 3 Babydoll              Mariah Carey  1997
-## 4 Don't Forget About Us Mariah Carey  2005
-## 5 Vision Of Love        Mariah Carey  1990
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Mine Again","2":"Mariah Carey","3":"2005"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005"},{"1":"Babydoll","2":"Mariah Carey","3":"1997"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005"},{"1":"Vision Of Love","2":"Mariah Carey","3":"1990"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 5. You've come across these two tibbles, and just wish all the info was available in one tibble. What would you do?
@@ -211,22 +134,11 @@ time %>%
   full_join(album, by = c("song", "artist_name"))
 ```
 
-```
-## # A tibble: 23 x 5
-##    song                artist_name     year city        album              
-##    <chr>               <chr>          <int> <chr>       <chr>              
-##  1 Corduroy            Pearl Jam       1994 <NA>        <NA>               
-##  2 Grievance           Pearl Jam       2000 Seattle, WA Binaural           
-##  3 Stupidmop           Pearl Jam       1994 Seattle, WA Vitalogy           
-##  4 Present Tense       Pearl Jam       1996 Seattle, WA No Code            
-##  5 MFC                 Pearl Jam       1998 Seattle, WA Live On Two Legs   
-##  6 Lukin               Pearl Jam       1996 Seattle, WA Seattle Washington~
-##  7 It's Lulu           The Boo Radle~  1995 Liverpool,~ Best Of            
-##  8 Sparrow             The Boo Radle~  1992 Liverpool,~ Everything's Alrig~
-##  9 Martin_ Doom! It's~ The Boo Radle~  1995 <NA>        <NA>               
-## 10 Leaves And Sand     The Boo Radle~  1993 <NA>        <NA>               
-## # ... with 13 more rows
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["song"],"name":[1],"type":["chr"],"align":["left"]},{"label":["artist_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["year"],"name":[3],"type":["int"],"align":["right"]},{"label":["city"],"name":[4],"type":["chr"],"align":["left"]},{"label":["album"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"Corduroy","2":"Pearl Jam","3":"1994","4":"NA","5":"NA"},{"1":"Grievance","2":"Pearl Jam","3":"2000","4":"Seattle, WA","5":"Binaural"},{"1":"Stupidmop","2":"Pearl Jam","3":"1994","4":"Seattle, WA","5":"Vitalogy"},{"1":"Present Tense","2":"Pearl Jam","3":"1996","4":"Seattle, WA","5":"No Code"},{"1":"MFC","2":"Pearl Jam","3":"1998","4":"Seattle, WA","5":"Live On Two Legs"},{"1":"Lukin","2":"Pearl Jam","3":"1996","4":"Seattle, WA","5":"Seattle Washington November 5 2000"},{"1":"It's Lulu","2":"The Boo Radleys","3":"1995","4":"Liverpool, England","5":"Best Of"},{"1":"Sparrow","2":"The Boo Radleys","3":"1992","4":"Liverpool, England","5":"Everything's Alright Forever"},{"1":"Martin_ Doom! It's Seven O'Clock","2":"The Boo Radleys","3":"1995","4":"NA","5":"NA"},{"1":"Leaves And Sand","2":"The Boo Radleys","3":"1993","4":"NA","5":"NA"},{"1":"High as Monkeys","2":"The Boo Radleys","3":"1998","4":"Liverpool, England","5":"Kingsize"},{"1":"Comb Your Hair","2":"The Boo Radleys","3":"1998","4":"NA","5":"NA"},{"1":"Butterfly McQueen","2":"The Boo Radleys","3":"1993","4":"Liverpool, England","5":"Giant Steps"},{"1":"Mine Again","2":"Mariah Carey","3":"2005","4":"NA","5":"NA"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005","4":"NA","5":"NA"},{"1":"Babydoll","2":"Mariah Carey","3":"1997","4":"NA","5":"NA"},{"1":"Don't Forget About Us","2":"Mariah Carey","3":"2005","4":"NA","5":"NA"},{"1":"Vision Of Love","2":"Mariah Carey","3":"1990","4":"NA","5":"NA"},{"1":"My One and Only Love","2":"Carly Simon","3":"2005","4":"New York, NY","5":"Moonlight Serenade"},{"1":"It Was So Easy  (LP Version)","2":"Carly Simon","3":"1972","4":"New York, NY","5":"No Secrets"},{"1":"I've Got A Crush On You","2":"Carly Simon","3":"1994","4":"New York, NY","5":"Clouds In My Coffee 1965-1995"},{"1":"Manha De Carnaval (Theme from \"Black Orpheus\")","2":"Carly Simon","3":"2007","4":"New York, NY","5":"Into White"},{"1":"Stuck On Amber","2":"The Boo Radleys","3":"NA","4":"Liverpool, England","5":"Wake Up!"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 ## Exercise 2: LOTR
@@ -283,20 +195,11 @@ retk <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/dat
 bind_rows(fell, ttow, retk)
 ```
 
-```
-## # A tibble: 9 x 4
-##   Film                       Race   Female  Male
-##   <chr>                      <chr>   <dbl> <dbl>
-## 1 The Fellowship Of The Ring Elf      1229   971
-## 2 The Fellowship Of The Ring Hobbit     14  3644
-## 3 The Fellowship Of The Ring Man         0  1995
-## 4 The Two Towers             Elf       331   513
-## 5 The Two Towers             Hobbit      0  2463
-## 6 The Two Towers             Man       401  3589
-## 7 The Return Of The King     Elf       183   510
-## 8 The Return Of The King     Hobbit      2  2673
-## 9 The Return Of The King     Man       268  2459
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Film"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Race"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Female"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Male"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"The Fellowship Of The Ring","2":"Elf","3":"1229","4":"971"},{"1":"The Fellowship Of The Ring","2":"Hobbit","3":"14","4":"3644"},{"1":"The Fellowship Of The Ring","2":"Man","3":"0","4":"1995"},{"1":"The Two Towers","2":"Elf","3":"331","4":"513"},{"1":"The Two Towers","2":"Hobbit","3":"0","4":"2463"},{"1":"The Two Towers","2":"Man","3":"401","4":"3589"},{"1":"The Return Of The King","2":"Elf","3":"183","4":"510"},{"1":"The Return Of The King","2":"Hobbit","3":"2","4":"2673"},{"1":"The Return Of The King","2":"Man","3":"268","4":"2459"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 2. Which races are present in "The Fellowship of the Ring" (`fell`), but not in any of the other ones?
 
@@ -307,10 +210,11 @@ fell %>%
   anti_join(retk, by = "Race")
 ```
 
-```
-## # A tibble: 0 x 4
-## # ... with 4 variables: Film <chr>, Race <chr>, Female <dbl>, Male <dbl>
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Film"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Race"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Female"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Male"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 
@@ -323,28 +227,22 @@ Let's use three set functions: `intersect`, `union` and `setdiff`. We'll work wi
 (y <-  tibble(x1 = LETTERS[1:3], x2 = 1:3))
 ```
 
-```
-## # A tibble: 3 x 2
-##   x1       x2
-##   <chr> <int>
-## 1 A         1
-## 2 B         2
-## 3 C         3
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["x2"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"A","2":"1"},{"1":"B","2":"2"},{"1":"C","2":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 
 ```r
 (z <- tibble(x1 = c("B", "C", "D"), x2 = 2:4))
 ```
 
-```
-## # A tibble: 3 x 2
-##   x1       x2
-##   <chr> <int>
-## 1 B         2
-## 2 C         3
-## 3 D         4
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["x2"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"B","2":"2"},{"1":"C","2":"3"},{"1":"D","2":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 1. Rows that appear in both `y` and `z`
 
@@ -353,13 +251,11 @@ Let's use three set functions: `intersect`, `union` and `setdiff`. We'll work wi
 intersect(y, z)
 ```
 
-```
-## # A tibble: 2 x 2
-##   x1       x2
-##   <chr> <int>
-## 1 B         2
-## 2 C         3
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["x2"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"B","2":"2"},{"1":"C","2":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 ```r
 inner_join(y, z)
@@ -369,13 +265,11 @@ inner_join(y, z)
 ## Joining, by = c("x1", "x2")
 ```
 
-```
-## # A tibble: 2 x 2
-##   x1       x2
-##   <chr> <int>
-## 1 B         2
-## 2 C         3
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["x2"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"B","2":"2"},{"1":"C","2":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 2. You collected the data in `y` on Day 1, and `z` in Day 2. Make a data set to reflect that.
 
@@ -387,17 +281,11 @@ bind_rows(
 )
 ```
 
-```
-## # A tibble: 6 x 3
-##   x1       x2 day  
-##   <chr> <int> <chr>
-## 1 A         1 Day 1
-## 2 B         2 Day 1
-## 3 C         3 Day 1
-## 4 B         2 Day 2
-## 5 C         3 Day 2
-## 6 D         4 Day 2
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["x2"],"name":[2],"type":["int"],"align":["right"]},{"label":["day"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"A","2":"1","3":"Day 1"},{"1":"B","2":"2","3":"Day 1"},{"1":"C","2":"3","3":"Day 1"},{"1":"B","2":"2","3":"Day 2"},{"1":"C","2":"3","3":"Day 2"},{"1":"D","2":"4","3":"Day 2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 3. The rows contained in `z` are bad! Remove those rows from `y`.
 
@@ -406,12 +294,11 @@ bind_rows(
 setdiff(y, z)
 ```
 
-```
-## # A tibble: 1 x 2
-##   x1       x2
-##   <chr> <int>
-## 1 A         1
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["x2"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"A","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 ```r
 anti_join(y, z)
@@ -421,9 +308,8 @@ anti_join(y, z)
 ## Joining, by = c("x1", "x2")
 ```
 
-```
-## # A tibble: 1 x 2
-##   x1       x2
-##   <chr> <int>
-## 1 A         1
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x1"],"name":[1],"type":["chr"],"align":["left"]},{"label":["x2"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"A","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>

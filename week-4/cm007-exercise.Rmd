@@ -1,9 +1,12 @@
 ---
 title: "cm007 Exercises: Practice with `dplyr`"
+date: "September 24, 2019"
 output: 
   html_document:
     keep_md: true
-    theme: paper
+    df_print: paged
+    toc: yes
+    theme: cerulean
 ---
 
 <!---The following chunk allows errors when knitting--->
@@ -12,7 +15,7 @@ output:
 knitr::opts_chunk$set(error = TRUE, warning = FALSE)
 ```
 
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(gapminder))
 suppressPackageStartupMessages(library(tsibble))

@@ -1,9 +1,12 @@
 ---
 title: "cm010 Exercises: Tibble Joins"
+date: "October 3, 2019"
 output: 
   html_document:
     keep_md: true
-    theme: paper
+    df_print: paged
+    toc: yes
+    theme: cerulean
 ---
 
 ## Requirements

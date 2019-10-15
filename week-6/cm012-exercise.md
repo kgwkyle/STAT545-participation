@@ -1,9 +1,12 @@
 ---
 title: "cm012 Exercises: Factors"
+date: "October 10, 2019"
 output: 
   html_document:
     keep_md: true
-    theme: paper
+    df_print: paged
+    toc: yes
+    theme: cerulean
 ---
 
 
@@ -180,16 +183,11 @@ gapminder %>%
   count(continent)
 ```
 
-```
-## # A tibble: 5 x 2
-##   continent     n
-##   <fct>     <int>
-## 1 Africa      624
-## 2 Americas    300
-## 3 Asia        396
-## 4 Europe      360
-## 5 Oceania      24
-```
+<div data-pagedtable="false">
+  <script data-pagedtable-source type="application/json">
+{"columns":[{"label":["continent"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Africa","2":"624"},{"1":"Americas","2":"300"},{"1":"Asia","2":"396"},{"1":"Europe","2":"360"},{"1":"Oceania","2":"24"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 
 The table is nice, but it would be better to visualize the data.
 Factors are most useful/helpful when plotting data.

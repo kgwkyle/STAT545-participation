@@ -1,6 +1,12 @@
 ---
 title: "cm009 Exercises: tidy data"
-output: html_notebook
+date: "October 1, 2019"
+output: 
+  html_document:
+    keep_md: true
+    df_print: paged
+    toc: yes
+    theme: cerulean
 editor_options: 
   chunk_output_type: inline
 ---

@@ -1,8 +1,12 @@
 ---
 title: 'cm006: `dplyr` Exercise'
+date: "September 19, 2019"
 output: 
   html_document:
     keep_md: true
+    df_print: paged
+    toc: yes
+    theme: cerulean
 editor_options: 
   chunk_output_type: inline
 ---
