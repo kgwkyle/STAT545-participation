@@ -6,7 +6,7 @@ output:
     theme: paper
 ---
 
-```{r allow errors, echo = FALSE}
+```{r allow errors, warning = FALSE, message = FALSE, echo = FALSE}
 knitr::opts_chunk$set(error = TRUE)
 library(gapminder)
 library(tidyverse)
