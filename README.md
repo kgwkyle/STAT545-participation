@@ -16,7 +16,7 @@ HTML links for each class where an HTML file was created and stored in this repo
 * [Class Meeting 8](https://kgwkyle.github.io/STAT545-participation/week-4/cm008-exercise.html)
 * [Class Meeting 9](https://kgwkyle.github.io/STAT545-participation/week-5/cm009-exercise.html)
 * [Class Meeting 10](https://kgwkyle.github.io/STAT545-participation/week-5/cm010-exercise.html)
-* [Class Meeting 11](https://github.com/kgwkyle/STAT545-participation/blob/master/week-6/cm11.R)
+* [Class Meeting 11](https://github.com/kgwkyle/STAT545-participation/blob/master/week-6/cm11.R) (Link to R-Script)
 * [Class Meeting 12](https://kgwkyle.github.io/STAT545-participation/week-6/cm012-exercise.html)
 * [Class Meeting 13](https://kgwkyle.github.io/STAT545-participation/week-7/cm013.html)
 * [Class Meeting 14](https://kgwkyle.github.io/STAT545-participation/week-7/cm014-exercise.html)
